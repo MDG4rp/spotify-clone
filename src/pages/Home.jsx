@@ -1,30 +1,27 @@
 import Sidebar from "../component/nav/Sidebar";
-import Secondcontainer from "../component/container/Secondcontainer";
-import SectionContainer from "../component/container/SectionContainer";
+
 import Navbar from "../component/nav/Navbar";
 import Footer from "../component/footer/Footer";
- 
+import MiniFooter from "../component/nav/MiniFooter";
+import Homeplaylist from "../component/album/Homeplaylist";
+
 export default function Home() {
   return (
-    <div
-      className="flex flex-col justify-center items-center"
-      style={{ backgroundColor: "rgba(18,18,18,255)" }}
-    >
+    <div>
       <div className="flex justify-between ">
-        <div className=" w-[300px]">
+        <div className=" top-0 sticky">
           <Sidebar />
         </div>
         <div className="">
           <Navbar />
-          <div className="flex-col justify-start">
-            <SectionContainer />
-            <Secondcontainer />
+          <div>
+            <div className="">
+              <Homeplaylist />
+            </div>
           </div>
         </div>
       </div>
-      <div className="">
-        <Footer />
-      </div>
+      <MiniFooter />
     </div>
   );
 }

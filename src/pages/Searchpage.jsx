@@ -7,7 +7,7 @@ export default function Searchpage() {
   return (
     <div>
       <div className="flex justify-between ">
-        <div className=" w-[50vw]sticky">
+        <div>
           <Sidebar />
         </div>
         <div className="">

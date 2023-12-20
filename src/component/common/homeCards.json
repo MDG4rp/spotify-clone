@@ -1,0 +1,39 @@
+{
+  "playlists": [
+    {
+      "name": "Deep Focus",
+      "description": "Instrumental playlist for deep concentration and enhanced productivity.",
+      "image_link": "https://source.unsplash.com/featured/?deep-focus"
+    },
+    {
+      "name": "Chill Lofi Study Beats",
+      "description": "Soothing lofi beats for relaxed studying and focused learning.",
+      "image_link": "https://source.unsplash.com/featured/?chill-lofi"
+    },
+    {
+      "name": "Christmas Peaceful Piano",
+      "description": "Serene piano melodies capturing the joy of Christmas.",
+      "image_link": "https://source.unsplash.com/featured/?christmas-piano"
+    },
+    {
+      "name": "Perfect Concentration",
+      "description": "Instrumental tunes curated for perfect concentration and mental clarity.",
+      "image_link": "https://source.unsplash.com/featured/?perfect-concentration"
+    },
+    {
+      "name": "House Focus",
+      "description": "Upbeat house music to energize and boost productivity.",
+      "image_link": "https://source.unsplash.com/featured/?house-focus"
+    },
+    {
+      "name": "Christmas Peaceful Guitar",
+      "description": "Warm acoustic guitar sounds for a peaceful Christmas ambiance.",
+      "image_link": "https://source.unsplash.com/featured/?christmas-guitar"
+    },
+    {
+      "name": "Reading Soundtrack",
+      "description": "Diverse soundtrack enhancing your reading experience with a calming background.",
+      "image_link": "https://source.unsplash.com/featured/?reading-soundtrack"
+    }
+  ]
+}
