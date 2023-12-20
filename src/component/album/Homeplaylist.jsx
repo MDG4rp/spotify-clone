@@ -16,7 +16,7 @@ export default function Homeplaylist() {
 
   return (
     <div
-      className="sticky rounded-2xl mr-2"
+      className="sticky rounded-2xl mr-2 w-full h-full"
       style={{ backgroundColor: "rgba(18,18,18,255)" }}
     >
       <h1 className="text-white ml-6 p-4 font-bold text-2xl">Focus</h1>
@@ -25,7 +25,8 @@ export default function Homeplaylist() {
           return (
             <Link key={index}>
               <div
-                className={` text-xl p-4 rounded-2xl h-[350px] transition duration-300 ease-in-out transform hover:scale-105 flex flex-col items-center  w-[250px] relative group`}
+                className={` text-xl p-4 rounded-2xl h-[350px] transition duration-300 
+                ease-in-out transform hover:scale-105 flex flex-col items-center  w-[250px] relative group`}
                 style={{
                   backgroundColor: "rgba(36,36,36,255)",
                   transition: "background-color 0.2s ease-in-out",
@@ -44,7 +45,6 @@ export default function Homeplaylist() {
                     className="h-[200px] w-[250px] rounded-2xl object-cover object-center shadow-xl mt-1"
                   />
                   <div className="absolute bottom-1 right-1 mb-2  opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
-                    {/* Play button icon with green background */}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
@@ -81,7 +81,9 @@ export default function Homeplaylist() {
           );
         })}
       </div>
-      <Footer />
+      <div className="">
+        <Footer />
+      </div>
     </div>
   );
 }

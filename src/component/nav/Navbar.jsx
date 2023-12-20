@@ -1,38 +1,56 @@
+import React from "react";
+import { Link } from "react-router-dom";
 
-import './Navbar.css'
-import { IoIosArrowBack } from "react-icons/io";
-import { IoIosArrowForward } from "react-icons/io";
-import { Link } from 'react-router-dom';
-import { CiSearch } from "react-icons/ci";
-
-export default Navbar
-
-function Navbar () {
-    return (           
-    <nav className='flex justify-between p-1 items-center sticky top-0 bg-black opacity-95'>
-
-            {/*pulsanti frecce */}       
-            <div className= 'flex p-3'>
-                <div className='flex p-3'>
-                <button className='arrow1'><IoIosArrowBack /></button>
-                <button className='arrow2'><IoIosArrowForward /></button>
-                </div>
-                {/*search bar*/}
-             
-            </div>
-       
-      
-        {/*pulsanti di accesso */}  
-            <div className='btnContainer flex items-center justify-center w-fit'>
-                <Link to={"/signuppage"}>
-                <button className='btn1'>Sign Up</button>
-                </Link>
-                <Link to={"/loginpage"}>
-                <button className='btn2'>Log In</button>
-                </Link>
-            </div>
-       
-          
-    </nav>
-    );
+export default function Navbar() {
+  return (
+    <div
+      className="h-[100px] flex justify-between items-center rounded-2xl mt-2"
+      style={{ backgroundColor: "rgba(5,5,5,255)" }}
+    >
+      <div className="text-white flex items-center justify-center ml-10 gap-2">
+        <button className="p-2 hover:bg-rgba-36-36-36-255 rounded-full">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 28 24"
+            width="40"
+            height="40"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M23 12M16 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button className="p-2 rounded-full hover:bg-rgba-36-36-36-255 self-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 28 24"
+            width="40"
+            height="40"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 12M12 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+      <div className="flex text-white p-4">
+        <Link to={"/Signuppage"}>
+          <button className=" h-[60px] p-2  w-[100px] font-bold rounded-3xl opacity-70 transform hover:scale-110 hover:opacity-100">
+            Sign up
+          </button>
+        </Link>
+        <Link to={"/Loginpage"}>
+          <button className=" h-[60px] p-2 bg-white text-black font-bold w-[120px] rounded-full transform hover:scale-110 hover:bg-gray-100">
+            Log in
+          </button>
+        </Link>
+      </div>
+    </div>
+  );
 }

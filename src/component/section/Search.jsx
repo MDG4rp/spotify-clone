@@ -29,16 +29,16 @@ export default function Search() {
       style={{ backgroundColor: "rgba(18,18,18,255)" }}
     >
       <h1 className="text-white mb-5 text-2xl font-bold">Browse all</h1>
-      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
         {title.map((titleName, index) => {
           const randomColor = getRandomColor();
           return (
             <Link key={index} to={`/playlistpage`}>
               <div
-                className={`rounded-xl aspect-square p-3 cursor-pointer text-xl md:text-xl lg:text3xl font-semibold overflow-hidden flex flex-col items-left`}
+                className={`rounded-xl aspect-square p-3 cursor-pointer text-xl md:text-xl lg:text-2xl xl:text-3xl font-semibold overflow-hidden flex flex-col items-left`}
                 style={{ backgroundColor: randomColor }}
               >
-                <p className=" self-auto">{titleName.titolo}</p>
+                <p className="">{titleName.titolo}</p>
                 <img
                   src={titleName.img}
                   alt={titleName.titolo}
@@ -49,7 +49,7 @@ export default function Search() {
           );
         })}
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

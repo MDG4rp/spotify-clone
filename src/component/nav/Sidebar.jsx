@@ -9,7 +9,7 @@ export default function Sidebar() {
     setClicked(true);
   };
   return (
-    <div className=" w-[450px] top-0 sticky h-screen bg-black p-2 flex flex-col">
+    <div className="min-w-[450px] top-0 sticky h-screen bg-black p-2 flex flex-col">
       <div
         className="Container1 text-neutral-300 p-6 rounded-2xl mb-2"
         style={{ backgroundColor: "rgba(18,18,18,255)" }}

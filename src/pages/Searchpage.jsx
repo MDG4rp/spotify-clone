@@ -10,7 +10,7 @@ export default function Searchpage() {
         <div>
           <Sidebar />
         </div>
-        <div className="">
+        <div className="sticky top-0 z-50">
           <NavwithSearch />
           <div>
             <div className="">
