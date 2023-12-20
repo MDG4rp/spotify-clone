@@ -1,19 +1,11 @@
 import { Link } from "react-router-dom";
-import Wrapper from "../common/Wrapper.jsx";
-import SvgSwitcher from "../Svg/SvgSwitcher.jsx";
-import LanguageModal from "../modal/LanguageModal.jsx";
-import { useState, useEffect } from "react";
-import Modal from "../modal/LanguageModal.jsx";
+import { useState } from "react";
 
 export default function Sidebar() {
-  const [svgPath, setSvgPath] = useState(
-    "M1.126 10.558c0-5.14 4.226-9.28 9.407-9.28 5.18 0 9.407 4.14 9.407 9.28a9.157 9.157 0 0 1-2.077 5.816l4.344 4.344a1 1 0 0 1-1.414 1.414l-4.353-4.353a9.454 9.454 0 0 1-5.907 2.058c-5.18 0-9.407-4.14-9.407-9.28zm9.407-7.28c-4.105 0-7.407 3.274-7.407 7.28s3.302 7.279 7.407 7.279 7.407-3.273 7.407-7.28c0-4.005-3.302-7.278-7.407-7.278z"
-  );
   const [clicked, setClicked] = useState(false);
-  const svgSwitcher = () => {
-    setSvgPath(
-      "M15.356 10.558c0 2.623-2.16 4.75-4.823 4.75-2.664 0-4.824-2.127-4.824-4.75s2.16-4.75 4.824-4.75c2.664 0 4.823 2.127 4.823 4.75z M1.126 10.558c0-5.14 4.226-9.28 9.407-9.28 5.18 0 9.407 4.14 9.407 9.28a9.157 9.157 0 0 1-2.077 5.816l4.344 4.344a1 1 0 0 1-1.414 1.414l-4.353-4.353a9.454 9.454 0 0 1-5.907 2.058c-5.18 0-9.407-4.14-9.407-9.28zm9.407-7.28c-4.105 0-7.407 3.274-7.407 7.28s3.302 7.279 7.407 7.279 7.407-3.273 7.407-7.28c0-4.005-3.302-7.278-7.407-7.278z"
-    );
+  const [isHovered, setIsHovered] = useState(false);
+
+  const switcher = () => {
     setClicked(true);
   };
   return (
@@ -25,9 +17,23 @@ export default function Sidebar() {
         <img src="src/assets/Spotify.png" alt="spotify" className="h-8 mb-6" />
 
         <div className="w-fit mt-4 mb-7 font-bold text-xl">
-          <Link to={"/"} className="flex hover:text-white">
-            <i className="fa-solid fa-house mr-3 text-[20px]"></i>
-            <h1 className="">Home</h1>
+          <Link
+            to={"/"}
+            className={`flex items-center ${clicked ? "" : "text-white"}`}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              className="w-6 h-6 mr-3 text-black"
+              fill={!clicked ? "white" : "none"}
+            >
+              <path
+                stroke="white"
+                strokeWidth="2"
+                d="M12 2L2 12h4v9h12v-9h4L12 2zm0 16h"
+              />
+            </svg>
+            <h1 className="hover:text-white">Home</h1>
           </Link>
         </div>
 
@@ -35,16 +41,22 @@ export default function Sidebar() {
           <Link
             to={"/Searchpage"}
             className={`flex items-center ${clicked ? "text-white" : ""}`}
-            onClick={svgSwitcher}
+            onClick={switcher}
           >
             <svg
-              className="outline-none"
-              tabIndex="0"
+              xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
-              fill="white"
-              height={20}
+              width="24"
+              height="24"
+              fill="none"
+              stroke="white"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
-              <path d={svgPath}></path>
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              <circle cx={clicked ? "11" : ""} cy={clicked ? "11" : ""} r={clicked ? "4" : ""} fill="white"/>
             </svg>
             <h1 className="ml-3 hover:text-white">Search</h1>
           </Link>
@@ -54,21 +66,44 @@ export default function Sidebar() {
       <div
         className="second-container flex-grow h-screen text-white p-4 rounded-2xl flex flex-col items-between relative"
         style={{
-          backgroundColor: "rgba(18,18,18,255)"
+          backgroundColor: "rgba(18,18,18,255)",
         }}
       >
         <div className="flex justify-between mb-5">
-          <Link to={"/"} className="flex gap-4">
-            <svg viewBox="0 0 24 24" className="w-[30px] ml-3">
-              <path
-                fill="white"
-                d="M3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zM15.5 2.134A1 1 0 0 0 14 3v18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.464a1 1 0 0 0-.5-.866l-6-3.464zM9 2a1 1 0 0 0-1 1v18a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1z"
-              ></path>
+          <div
+            className="flex gap-4 cursor-pointer"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <svg
+              viewBox="0 0 24 24"
+              className={`w-[30px] ml-3 ${
+                isHovered ? "fill-white" : "fill-gray-400"
+              }`}
+              style={{ transition: "fill 0.3s ease-in-out" }}
+            >
+              <path d="M3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zM15.5 2.134A1 1 0 0 0 14 3v18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.464a1 1 0 0 0-.5-.866l-6-3.464zM9 2a1 1 0 0 0-1 1v18a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1z"></path>
             </svg>
-            <h1 className="text-xl self-center mt-1">Your Library</h1>
-          </Link>
+            <h1
+              className={`text-xl self-center mt-1 ${
+                isHovered ? "text-white" : "text-gray-400"
+              }`}
+              style={{ transition: "color 0.3s ease-in-out" }}
+            >
+              Your Library
+            </h1>
+          </div>
 
-          <button className="rounded-full hover:bg-gray-600 p-2">
+          <button
+            className="rounded-full p-2 transition duration-300 ease-in-out hover:bg-rgba-36"
+            style={{ backgroundColor: "transparent" }}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.backgroundColor = "rgba(36, 36, 36, 255)")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.backgroundColor = "transparent")
+            }
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24"
@@ -77,7 +112,7 @@ export default function Sidebar() {
             >
               <path
                 d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"
-                className=" fill-gray-400 hover:fill-white"
+                className="fill-white"
               ></path>
             </svg>
           </button>
@@ -88,9 +123,11 @@ export default function Sidebar() {
           style={{ backgroundColor: "rgba(36,36,36,255)" }}
         >
           <div className="ml-2 p-2">
-            <h1 className="mb-3 font-extrabold">Create your first playlist</h1>
+            <h1 className="mb-3 font-extrabold text-xl">
+              Create your first playlist
+            </h1>
             <h2 className="mb-4">It's easy, we'll help you</h2>
-            <button className="bg-white text-black p-2 rounded-full font-bold w-[170px]">
+            <button className="bg-white text-black p-3 rounded-full font-bold hover:bg-gray-200 transform transition-transform hover:scale-105">
               Create playlist
             </button>
           </div>
@@ -101,11 +138,11 @@ export default function Sidebar() {
           style={{ backgroundColor: "rgba(36,36,36,255)" }}
         >
           <div className="ml-2 p-2">
-            <h1 className="mb-3 font-extrabold">
+            <h1 className="mb-3 font-extrabold text-xl">
               Let's find some podcasts to follow
             </h1>
             <h2 className="mb-4">We'll keep you updated on new episodes</h2>
-            <button className="bg-white text-black p-2 rounded-full w-[190px] font-bold">
+            <button className="bg-white text-black p-3 rounded-full font-bold hover:bg-gray-200 transform transition-transform hover:scale-105">
               Browse podcasts
             </button>
           </div>
