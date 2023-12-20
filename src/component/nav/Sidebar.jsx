@@ -19,7 +19,7 @@ export default function Sidebar() {
   return (
     <div className=" w-[450px] top-0 sticky h-screen bg-black p-2 flex flex-col">
       <div
-        className="Container1 text-neutral-300 p-6 rounded-2xl mb-4"
+        className="Container1 text-neutral-300 p-6 rounded-2xl mb-2"
         style={{ backgroundColor: "rgba(18,18,18,255)" }}
       >
         <img src="src/assets/Spotify.png" alt="spotify" className="h-8 mb-6" />

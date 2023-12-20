@@ -15,14 +15,17 @@ export default function Homeplaylist() {
   }, []);
 
   return (
-    <div className="sticky rounded-2xl mr-2" style={{ backgroundColor: "rgba(18,18,18,255)" }}>
+    <div
+      className="sticky rounded-2xl mr-2"
+      style={{ backgroundColor: "rgba(18,18,18,255)" }}
+    >
       <h1 className="text-white ml-6 p-4 font-bold text-2xl">Focus</h1>
       <div className="w-full gap-7 p-5 flex flex-wrap">
         {list.map((listName, index) => {
           return (
             <Link key={index}>
               <div
-                className={`p-5 rounded-2xl h-[300px] transition duration-300 ease-in-out transform hover:scale-105 flex flex-col items-center  w-[230px] relative group`}
+                className={` text-xl p-4 rounded-2xl h-[350px] transition duration-300 ease-in-out transform hover:scale-105 flex flex-col items-center  w-[250px] relative group`}
                 style={{
                   backgroundColor: "rgba(36,36,36,255)",
                   transition: "background-color 0.2s ease-in-out",
@@ -38,9 +41,10 @@ export default function Homeplaylist() {
                   <img
                     src={listName.image_link}
                     alt={listName.name}
-                    className="h-[170px] w-[180px] rounded-2xl object-cover object-center shadow-xl"
+                    className="h-[200px] w-[250px] rounded-2xl object-cover object-center shadow-xl mt-1"
                   />
-                  <div className="absolute bottom-0 right-0 mb-2 mr-2 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
+                  <div className="absolute bottom-1 right-1 mb-2  opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out">
+                    {/* Play button icon with green background */}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
@@ -49,18 +53,25 @@ export default function Homeplaylist() {
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      className="h-12 w-12 rounded-full bg-green-500 p-3"
+                      className="h-16 w-16 rounded-full bg-green-500 p-4"
                     >
                       <polygon points="5 3 19 12 5 21 5 3"></polygon>
                     </svg>
                   </div>
                 </div>
+
                 <div>
-                  <h1 className="text-white mb-4 font-bold line-clamp-1">
+                  <h1
+                    className="text-white mb-4 font-bold line-clamp-1"
+                    title={listName.name}
+                  >
                     {listName.name}
                   </h1>
                   <div className="text-white overflow-hidden sm:overflow-visible">
-                    <p className="line-clamp-2 hover:no-underline">
+                    <p
+                      className="opacity-70 line-clamp-2 hover:no-underline"
+                      title={listName.description}
+                    >
                       {listName.description}
                     </p>
                   </div>
