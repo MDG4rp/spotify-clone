@@ -2,13 +2,19 @@ import { Link } from "react-router-dom";
 import "../footer/Footer.css"
 
 export default function NavwithSearch() {
+  const goBack = () => {
+    window.history.back();
+  };
+  const goForward = () => {
+    window.history.forward();
+  };
   return (
     <div
       className="h-[100px] flex justify-between items-center rounded-2xl mt-2 sticky top-0 z-50 opacity-95"
       style={{ backgroundColor: "rgba(5,5,5,255)" }}
     >
       <div className="text-white flex items-center justify-center ml-10 gap-2">
-        <button className=" hover:bg-rgba-36-36-36-255 rounded-full">
+        <button className=" hover:bg-rgba-36-36-36-255 rounded-full" onClick={goBack}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 28 24"
@@ -23,7 +29,7 @@ export default function NavwithSearch() {
             <path d="M23 12M16 19l-7-7 7-7" />
           </svg>
         </button>
-        <button className=" rounded-full hover:bg-rgba-36-36-36-255 self-center">
+        <button className=" rounded-full hover:bg-rgba-36-36-36-255 self-center" onClick={goForward}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 28 24"
