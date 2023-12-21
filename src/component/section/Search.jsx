@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
-import { Link } from "react-router-dom";
-import Container from "../container/Container";
 import Footer from "../footer/Footer";
+import { useNavigate } from "react-router-dom";
 
 export default function Search() {
   const [title, setTitle] = useState([]);
-  const [keys, setKeys] = useState([]);
   let endpoint = "src/component/common/generi.json";
+  const navigate = useNavigate();
+
   useEffect(() => {
     Axios.get(endpoint).then((res) => {
       setTitle([...res.data.generi]);
@@ -23,6 +23,10 @@ export default function Search() {
     return color;
   };
 
+  const handleCardClick = (categoryName) => {
+    navigate(`/CategoryPage/${categoryName}`);
+  };
+
   return (
     <div
       className="min-h-screen flex flex-col p-7 relative"
@@ -33,19 +37,21 @@ export default function Search() {
         {title.map((titleName, index) => {
           const randomColor = getRandomColor();
           return (
-            <Link key={index} to={`/playlistpage`}>
-              <div
-                className={`rounded-xl aspect-square p-3 cursor-pointer text-xl md:text-xl lg:text-2xl xl:text-3xl font-semibold overflow-hidden flex flex-col items-left`}
-                style={{ backgroundColor: randomColor }}
-              >
-                <p className="">{titleName.titolo}</p>
-                <img
-                  src={titleName.img}
-                  alt={titleName.titolo}
-                  className="transform rotate-45 scale-90 translate-x-1/3 translate-y-1/2 rounded-xl"
-                />
-              </div>
-            </Link>
+            <div
+              key={index}
+              onClick={() => handleCardClick(titleName.titolo)}
+              className={`
+  rounded-xl aspect-square p-3 cursor-pointer text-xl md:text-xl lg:text-2xl xl:text-3xl font-semibold overflow-hidden 
+  flex flex-col items-left transition-transform transform hover:scale-110`}
+              style={{ backgroundColor: randomColor }}
+            >
+              <p className="">{titleName.titolo}</p>
+              <img
+                src={titleName.img}
+                alt={titleName.titolo}
+                className="transform rotate-45 scale-90 translate-x-1/3 translate-y-1/2 rounded-xl"
+              />
+            </div>
           );
         })}
       </div>

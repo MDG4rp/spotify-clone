@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Navbar() {
   return (
     <div
-      className="h-[100px] flex justify-between items-center rounded-2xl mt-2"
+      className="h-[100px] flex justify-between items-center mt-2"
       style={{ backgroundColor: "rgba(5,5,5,255)" }}
     >
       <div className="text-white flex items-center justify-center ml-10 gap-2">

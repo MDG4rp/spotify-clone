@@ -55,9 +55,9 @@ export default function Footer() {
       </button>
     </div>
   </div>
-  <hr className="my-12 opacity-20" />
+  <hr className="my-14 opacity-20" />
 
-  <div className="copyright text-center md:text-left">
+  <div className="copyright text-center md:text-left h-fit">
     © 2023 Copyright: Spotify-Clone
   </div>
 </footer>

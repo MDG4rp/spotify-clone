@@ -1,7 +1,7 @@
 .menu p{
     opacity: 50%;
     cursor: pointer;
-    margin-top: 5px;
+    margin-top: 20px;
 }
 
 .menu p:hover{
