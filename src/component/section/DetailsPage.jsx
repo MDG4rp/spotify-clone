@@ -7,7 +7,7 @@ const DetailsPage = () => {
   return (
     <div>
       <h2 className="text-white">Details Page for Playlist {id}</h2>
-      {/* Render the playlist details */}
+     
     </div>
   );
 };

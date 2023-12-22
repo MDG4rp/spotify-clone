@@ -53,9 +53,11 @@ export default function Homeplaylist() {
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      className="h-16 w-16 rounded-full bg-green-500 p-4"
+                      className="h-16 w-16 rounded-full bg-green-500 p-4 mr-2"
                     >
-                      <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                      <g transform="translate(1 1)">
+                        <polygon points="5 3 20 12 5 21 5 3"></polygon>
+                      </g>
                     </svg>
                   </div>
                 </div>
