@@ -15,7 +15,14 @@ export default function Sidebar() {
         className="Container1 text-neutral-300 p-6 rounded-2xl mb-2"
         style={{ backgroundColor: "rgba(18,18,18,255)" }}
       >
-        <img src="src/assets/Spotify.png" alt="spotify" className="h-8 mb-6" />
+        <Link to={"/"}>
+          <img
+            src="src/assets/Spotify.png"
+            alt="spotify"
+            className="h-8 mb-6 w-fit"
+            
+          />
+        </Link>
 
         <div className="w-fit mt-4 mb-7 font-bold text-xl">
           <Link
@@ -154,9 +161,9 @@ export default function Sidebar() {
           </div>
         </div>
       </div>
-        <div className=" sticky bottom-0">
-          <MiniFooter />
-        </div>
+      <div className=" sticky bottom-0">
+        <MiniFooter />
+      </div>
     </div>
   );
 }
