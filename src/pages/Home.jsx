@@ -1,8 +1,6 @@
 import Sidebar from "../component/nav/Sidebar";
 
 import Navbar from "../component/nav/Navbar";
-import Footer from "../component/footer/Footer";
-import MiniFooter from "../component/nav/MiniFooter";
 import Homeplaylist from "../component/album/Homeplaylist";
 
 export default function Home() {
@@ -15,7 +13,7 @@ export default function Home() {
           <Homeplaylist />
         </div>
       </div>
-      <MiniFooter/>
+      
     </div>
   );
 }

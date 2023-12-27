@@ -20,7 +20,7 @@ export default function Homeplaylist() {
       style={{ backgroundColor: "rgba(18,18,18,255)" }}
     >
       <h1 className="text-white ml-6 p-4 font-bold text-2xl">Focus</h1>
-      <div className="w-full gap-7 p-5 flex flex-wrap">
+      <div className="w-full gap-7 p-5 flex flex-wrap ml-5">
         {list.map((listName, index) => {
           return (
             <Link key={index}>

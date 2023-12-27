@@ -2,7 +2,7 @@ import LanguageModal from "../modal/LanguageModal.jsx";
 export default function MiniFooter(){
     return(
         <div
-        className="w-[435px] ml-2 fixed bottom-0 text-white p-10 text-sm rounded-2xl"
+        className="w-full fixed bottom-0 text-white p-10 text-sm rounded-2xl"
         style={{ backgroundColor: "rgba(18,18,18,255)" }}
       >
         <div className="first-line flex opacity-70 gap-6 p-2">

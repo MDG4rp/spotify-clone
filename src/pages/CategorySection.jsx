@@ -6,20 +6,16 @@ export default function CategorySection() {
   return (
     <div>
       <div className="flex justify-between">
-  <div className="">
-    <Sidebar />
-  </div>
-  <div className="sticky top-0 z-50 flex-grow">
-    <Navbar />
-    <div className="flex-grow overflow-y-auto">
-      <CategoryPage />
-    </div>
-  </div>
-</div>
-<div className="overflow-y-auto">
-  <MiniFooter />
-</div>
-
+        <div className="">
+          <Sidebar />
+        </div>
+        <div className="sticky top-0 z-50 flex-grow">
+          <Navbar />
+          <div className="flex-grow overflow-y-auto">
+            <CategoryPage />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

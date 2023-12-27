@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import MiniFooter from "./MiniFooter";
 
 export default function Sidebar() {
   const [clicked, setClicked] = useState(false);
@@ -148,6 +149,7 @@ export default function Sidebar() {
           </div>
         </div>
       </div>
+      <MiniFooter/>
     </div>
   );
 }
