@@ -57,7 +57,12 @@ export default function Sidebar() {
             >
               <circle cx="11" cy="11" r="8" />
               <line x1="21" y1="21" x2="16.65" y2="16.65" />
-              <circle cx={clicked ? "11" : ""} cy={clicked ? "11" : ""} r={clicked ? "4" : ""} fill="white"/>
+              <circle
+                cx={clicked ? "11" : ""}
+                cy={clicked ? "11" : ""}
+                r={clicked ? "4" : ""}
+                fill="white"
+              />
             </svg>
             <h1 className="ml-3 hover:text-white">Search</h1>
           </Link>
@@ -65,7 +70,7 @@ export default function Sidebar() {
       </div>
 
       <div
-        className="second-container flex-grow h-screen text-white p-4 rounded-2xl flex flex-col items-between relative"
+        className="second-container flex-grow h-screen text-white p-4 rounded-t-2xl flex flex-col items-between relative"
         style={{
           backgroundColor: "rgba(18,18,18,255)",
         }}
@@ -149,7 +154,9 @@ export default function Sidebar() {
           </div>
         </div>
       </div>
-      <MiniFooter/>
+        <div className=" sticky bottom-0">
+          <MiniFooter />
+        </div>
     </div>
   );
 }

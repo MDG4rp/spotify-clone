@@ -19,7 +19,6 @@ export default function Searchpage() {
           </div>
         </div>
       </div>
-      <MiniFooter />
     </div>
   );
 }
